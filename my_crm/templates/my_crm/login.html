@@ -1,0 +1,42 @@
+<html>
+<head>
+<meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+</head>
+<style>
+    body {
+        padding-top: 10%;
+    }
+
+</style>
+<body>
+
+ <div class="container">
+<div class="row">
+  <div class="col-md-6 offset-md-3 centered">
+
+      <form class="form-signin" action="{% url 'login' %}" method="post" id="login-form">{% csrf_token %}
+        <h2 class="form-signin-heading">{{ message }}</h2>
+        <label for="id_username" class="sr-only">Email address</label>
+        <input type="text" name="username" id="id_username" class="form-control" placeholder="User Name" required autofocus>
+        <label for="id_password" class="sr-only">Password</label>
+        <input type="password" name="password" id="id_password" class="form-control" placeholder="Password" required>
+        <div class="checkbox">
+          <label>
+            <input type="checkbox" value="remember-me"> Remember me
+          </label>
+        </div>
+        <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      </form>
+  </div>
+</div>
+ </div>
+
+
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+</body>
+</html>
